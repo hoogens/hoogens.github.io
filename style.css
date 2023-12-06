@@ -1,5 +1,24 @@
+/*Global elements*/
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+/*Style header*/
 .header {
     background-color: rgb(225, 225, 225);
     text-align: center;
     padding: 20px;
+}
+
+/*Style navigation bar*/
+.topnav {
+    background-color: aquamarine;
+}
+
+/*Style the footer*/
+.footer {
+    background-color: rgb(202, 202, 202);
+    padding: 10px;
+    text-align: center;
 }
