@@ -6,6 +6,10 @@
     text-decoration: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /*Style header*/
 .header {
     background-color: rgb(225, 225, 225);
@@ -14,8 +18,37 @@
 }
 
 /*Style navigation bar*/
+nav, .navlink {
+    display: flex;
+}
+
 nav {
-    background-color: rgb(163, 255, 176);
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+}
+
+.navlink {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: gray;
+    text-decoration: underline;
+    text-underline-offset: 1.5rem;
+    text-decoration-color: rgb(181,181,181);
+}
+
+.logo {
+    font-size: 2rem;
 }
 
 /*Style the footer*/
