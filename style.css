@@ -1,5 +1,7 @@
 /*Global elements*/
 * {
+    margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
@@ -13,8 +15,7 @@
 
 /*Style navigation bar*/
 nav {
-    background-color: aqua;
-    float: right;
+    background-color: rgb(163, 255, 176);
 }
 
 /*Style the footer*/
