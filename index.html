@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="header">
-        <h1>My Portfolio</h1>
-    </div>
-    <nav id="nav">
-        <div class="logo">Sarah H</div>
-        <div>
-            <ul class="navlink">
-                <li><a href="#about">About me</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-
-    <section class="about">
-        <h2>About me</h2>
-        <p>Hi, my name is Sarah H.</p>
-    </section>
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>GitHub: <a href="https://www.github.com/hoogens">View GitHub profile</a></p>
-    </section>
-    <div class="footer">
-        <p>All rights reserved @footer.</p>
-    </div>
-    <script src="script.js"></script>
-
+    <!-- Navbar header section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <h2 class="logo-heading">Sarah Hoogendorp</h2>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars hamburger-icon"></i>
+                <i class="fas fa-times cross-icon"></i>
+            </div>
+            <div class="menu">
+                <ul class="menu-list">
+                    <li class="menu-list-items">
+                        <a href="#home" class="links">
+                            Home
+                        </a>
+                    </li>
+                    <li class="menu-list-items">
+                        <a href="#portfolio" class="links">
+                            Portfolio
+                        </a>
+                    </li>
+                    <li class="menu-list-items">
+                        <a href="#about" class="links">
+                            About me
+                        </a>
+                    </li>
+                    <li class="menu-list-items">
+                        <a href="#contact" class="links">
+                            Contact me
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 </body>
-</html>
