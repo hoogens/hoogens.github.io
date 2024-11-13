@@ -10,50 +10,45 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
     <!-- Nav bar -->
     <header>
         <nav>
             <ul>
-                <li>
-                    <a href="#about">About Me</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contact</a>
-                </li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <h1>Sarah H.</h1>
-        <p>Computer science student</p>
+        <p>Computer Science student</p>
     </header>
 
     <!-- About Section -->
     <section id="about">
         <h2>About me</h2>
-        <p>Hello! I'm Sarah, a Computer science student with a passion for technology and creating impactful projects.</p>
+        <p id="about-description">Loading...</p>
     </section>
 
     <!-- Projects Section-->
     <section id="projects">
         <h2>Projects</h2>
-        <div id="github-projects"></div> 
+        <div id="github-projects">Loading...</div> 
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
-        <ul>
-            <li>Hardware</li>
-            <li>Web development</li>
-            <li>Python Programming</li>
-            <li>Research</li>
-        </ul>
+        <div class="skill" data-level="85">Java</div>
+        <div class="skill" data-level="60">Python</div>
+        <div class="skill" data-level="20">SQL</div>
+        <div class="skill" data-level="85">RPI</div>
     </section>
 
     <!-- Contact Section-->
     <section id="contact">
         <h2>Contact</h2>
-        <p>Feel free to reach out through LinkedIn!</p>
+        <p id="contact-info">Loading...</p>
     </section>
 
     <!-- Footer Section -->
@@ -61,5 +56,7 @@
         <p>&copy; 2024 Sarah H.</p>
         <p>Built with a passion for technology</p>
     </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
