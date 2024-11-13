@@ -48,11 +48,65 @@ section {
 }
 
 /* Projects*/
-#projects .project{
+#project-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+#project-container {
+    width: 80%;
+    overflow: hidden;
+}
+
+.project {
+    display: none;
+    animation: fadeIn 0.5s;
     background-color: var(--secondary-color);
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project.active {
+    display: block;
+}
+
+#prev-project, #next-project {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 4px;
+}
+
+#prev-project:hover, #next-project:hover {
+    background: var(--accent-color);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive design for the carousel */
+@media (max-width: 768px) {
+    #project-carousel {
+        flex-direction: column;
+    }
+
+    #project-container {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    #prev-project, #next-project {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
 }
 
 /* Skill Bars */
