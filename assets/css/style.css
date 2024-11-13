@@ -1,3 +1,56 @@
+/* Color Palette*/
+:root {
+    --primary-color: #b565a7;
+    --secondary-color: #ffdde1;
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+    --accent-color: #88a2d3;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header*/
+header {
+    text-align: center;
+    padding: 2rem;
+
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+
+/* Sections*/
+section {
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 800px;
+}
+
+/* Projects*/
+#Projects {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
 /* Footer */
 footer {
     background-color: var(--bg-color);
