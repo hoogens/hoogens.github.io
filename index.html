@@ -10,59 +10,67 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Nav bar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <h1>Sarah H.</h1>
-        <p>Computer Science student</p>
-    </header>
+    <!-- Search balk -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search my portfolio">
+        <button id="search-button">Google Search</button>
+    </div>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About me</h2>
-        <p id="about-description">Loading...</p>
-    </section>
+    <div id="content-container" style="display: none;">
+        <!-- Nav bar -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <h1>Sarah H.</h1>
+            <p>Computer Science student</p>
+        </header>
 
-    <!-- Projects Section-->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div id="project-carousel">
-            <button id="prev-project">&lt;</button>
-            <div id="project-container">
-                <!-- Projects will be added by JavaScript -->
+        <!-- About Section -->
+        <section id="about">
+            <h2>About me</h2>
+            <p id="about-description">Loading...</p>
+        </section>
+
+        <!-- Projects Section-->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div id="project-carousel">
+                <button id="prev-project">&lt;</button>
+                <div id="project-container">
+                    <!-- Projects will be added by JavaScript -->
+                </div>
+                <button id="next-project">&gt;</button>
             </div>
-            <button id="next-project">&gt;</button>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skill" data-level="85">Java</div>
-        <div class="skill" data-level="60">Python</div>
-        <div class="skill" data-level="20">SQL</div>
-        <div class="skill" data-level="85">RPI</div>
-    </section>
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skill" data-level="85">Java</div>
+            <div class="skill" data-level="60">Python</div>
+            <div class="skill" data-level="20">SQL</div>
+            <div class="skill" data-level="85">RPI</div>
+        </section>
 
-    <!-- Contact Section-->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p id="contact-info">Loading...</p>
-    </section>
+        <!-- Contact Section-->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p id="contact-info">Loading...</p>
+        </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Sarah H.</p>
-        <p>Built with a passion for technology</p>
-    </footer>
-
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2024 Sarah H.</p>
+            <p>Built with a passion for technology</p>
+        </footer>
+        
+    </div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
