@@ -9,11 +9,60 @@ body {
     background-color: #fff;
 }
 
+/* Nav bar */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-left .logo {
+    color: #4285f4;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-right a {
+    color: #000;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+.nav-right a:hover {
+    color: #4285f4;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+
+/* Logo */
+.google-style-text {
+    font-size: 90px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-family: 'Product Sans', Arial, sans-serif;
+}
+
+.google-style-text {
+    color: #4285f4;
+}
+
 .search-container {
     text-align: center;
     margin-top: 15vh;
 }
 
+/* Search bar */
 .search-bar {
     display: flex;
     align-items: center;

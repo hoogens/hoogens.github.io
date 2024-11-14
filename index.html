@@ -12,8 +12,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <!-- Nav bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <a href="#" class="logo">Portfolio</a>
+        </div>
+        <div class="nav-right">
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
     <!-- Search func -->
     <div class="search-container">
+        <h1 class="google-style-text">Sarah H.</h1>
         <div class="search-bar" role="search">
             <i class="fas fa-search search-icon" aria-hidden="true"></i>
             <input 
@@ -23,7 +38,6 @@
                 aria-label="Search portfolio"
                 >
         </div>
-
         <div class="search-buttons">
             <button onclick="handleSearch()">Google Search</button>
             <button onclick="feelingLucky()">I'm Feeling Lucky</button>
@@ -31,20 +45,6 @@
     </div>
 
     <div id="content-container" class="search-results" style="display: none;">
-        <!-- Nav bar -->
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <h1>Sarah H.</h1>
-            <p>Computer Science student</p>
-        </header>
-
         <!-- About Section -->
         <section id="about">
             <h2>About me</h2>
