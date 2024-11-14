@@ -8,15 +8,29 @@
     <meta name="author" content="Sarah H.">
     <title>Portfolio - Sarah H.</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- Search balk -->
+    <!-- Search func -->
     <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search my portfolio">
-        <button id="search-button">Google Search</button>
+        <div class="search-bar" role="search">
+            <i class="fas fa-search search-icon" aria-hidden="true"></i>
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Search my Portfolio..."
+                aria-label="Search portfolio"
+                >
+        </div>
+
+        <div class="search-buttons">
+            <button onclick="handleSearch()">Google Search</button>
+            <button onclick="feelingLucky()">I'm Feeling Lucky</button>
+        </div>
     </div>
 
-    <div id="content-container" style="display: none;">
+    <div id="content-container" class="search-results" style="display: none;">
         <!-- Nav bar -->
         <header>
             <nav>
@@ -69,8 +83,8 @@
             <p>&copy; 2024 Sarah H.</p>
             <p>Built with a passion for technology</p>
         </footer>
-        
     </div>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
