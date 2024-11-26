@@ -29,14 +29,12 @@
     <!-- Search func -->
     <div class="search-container">
         <h1 class="google-style-text">Sarah H.</h1>
-        <div class="search-bar" role="search">
-            <i class="fas fa-search search-icon" aria-hidden="true"></i>
+        <div class="search-bar">
+            <i class="search-icon">🔍</i>
             <input 
                 type="text" 
                 id="search-input" 
-                placeholder="Search my Portfolio..."
-                aria-label="Search portfolio"
-                >
+                placeholder="Search my Portfolio...">
         </div>
         <div class="search-buttons">
             <button onclick="handleSearch()">Google Search</button>
@@ -44,38 +42,25 @@
         </div>
     </div>
 
-    <div id="content-container" class="search-results" style="display: none;">
+    <div id="content-container" style="display: none;">
         <!-- About Section -->
         <section id="about">
             <h2>About me</h2>
-            <p id="about-description">Loading...</p>
         </section>
 
         <!-- Projects Section-->
         <section id="projects">
             <h2>Projects</h2>
-            <div id="project-carousel">
-                <button id="prev-project">&lt;</button>
-                <div id="project-container">
-                    <!-- Projects will be added by JavaScript -->
-                </div>
-                <button id="next-project">&gt;</button>
-            </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills">
             <h2>Skills</h2>
-            <div class="skill" data-level="85">Java</div>
-            <div class="skill" data-level="60">Python</div>
-            <div class="skill" data-level="20">SQL</div>
-            <div class="skill" data-level="85">RPI</div>
         </section>
 
         <!-- Contact Section-->
         <section id="contact">
             <h2>Contact</h2>
-            <p id="contact-info">Loading...</p>
         </section>
 
         <!-- Footer Section -->
