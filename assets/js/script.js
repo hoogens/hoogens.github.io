@@ -26,9 +26,10 @@ function feelingLucky() {
     const randomSection = sections[Math.floor(Math.random() * sections.length)];
     
     document.getElementById('content-container').style.display = 'block';
-    document.querySelector('.search-container').style.marginTop = '20px';
+    document.querySelector('.search-container').classList.add = 'content-visible';
     document.getElementById(randomSection).scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
+        block: 'start'
     });
 }
 

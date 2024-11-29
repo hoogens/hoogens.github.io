@@ -1,72 +1,146 @@
-:root {
-    --google-blue: #4285f4;
-    --google-border: #dfe1e5;
-    --google-hover: #f1f3f4;
+/* Reset en basis stijlen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Product Sans', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
+    background-color: white;
 }
 
+/* Hoofdcontainer */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh;
+    padding: 20px;
+}
+
+/* Zoekbalk container */
+.search-wrapper {
+    position: relative;
+    width: 582px;
+    max-width: 90%;
+}
+
+/* Zoekbalk */
+.search-bar {
+    width: 100%;
+    height: 44px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background: white;
+}
+
+.search-bar:hover,
+.search-bar:focus-within {
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    border-color: transparent;
+}
+
+/* Zoek icoon */
+.search-icon {
+    color: #9aa0a6;
+    margin-right: 12px;
+    font-size: 14px;
+}
+
+/* Input veld */
+#search-input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+}
+
+/* Knoppen container */
+.search-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* Knoppen stijling */
+.search-btn,
+.lucky-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 0 16px;
+    height: 36px;
+    min-width: 120px;
+    cursor: pointer;
+}
+
+.search-btn:hover,
+.lucky-btn:hover {
+    border: 1px solid #dadce0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+/* Content container voor na de zoekopdracht */
+#content-container {
+    max-width: 1200px;
+    margin: 80px 0 0 100px;
+    padding: 20px;
+    width: 80%;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Nav links */
 .top-nav {
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px;
+    background-color: white;
 }
 
-.search-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
-    padding: 20px;
-    transition: margin-top 0.3s ease;
+.nav-left a, 
+.nav-right a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
 }
 
-.google-style-text {
-    font-size: 72px;
-    color: var(--google-blue);
-    margin-bottom: 30px;
+/* Content styling */
+.content-visible {
+    margin-top: 20px;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
 }
 
-.search-bar {
-    display: flex;
-    align-items: center;
-    max-width: 584px;
-    width: 90%;
-    padding: 10px 20px;
-    border: 1px solid var(--google-border);
-    border-radius: 24px;
-    transition: box-shadow 0.3s;
-}
-
-.search-bar:hover {
-    box-shadow: 0 1px 6px rgba(32,33,36,0.28);
-}
-
-#content-container {
-    max-width: 800px;
-    margin: 80px auto;
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 40px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+/* Footer styling */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: #f2f2f2;
+    font-size: 14px;
+    color: #70757a;
 }
