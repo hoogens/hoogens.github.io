@@ -1,4 +1,3 @@
-/* Reset en basis stijlen */
 * {
     margin: 0;
     padding: 0;
@@ -6,29 +5,51 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
+    font-family: arial, sans-serif;
+    height: 100vh;
     background-color: white;
 }
 
-/* Hoofdcontainer */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    font-size: 13px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left a, .nav-right a {
+    text-decoration: none;
+    color: rgba(0,0,0,0.87);
+    margin: 0 15px;
+}
+
 .search-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 85vh;
-    padding: 20px;
 }
 
-/* Zoekbalk container */
+.logo h1 {
+    font-size: 90px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    margin-bottom: 28px;
+}
+
 .search-wrapper {
-    position: relative;
     width: 582px;
     max-width: 90%;
+    margin: 0 auto;
 }
 
-/* Zoekbalk */
 .search-bar {
     width: 100%;
     height: 44px;
@@ -37,7 +58,6 @@ body {
     display: flex;
     align-items: center;
     padding: 0 15px;
-    background: white;
 }
 
 .search-bar:hover,
@@ -46,43 +66,40 @@ body {
     border-color: transparent;
 }
 
-/* Zoek icoon */
 .search-icon {
     color: #9aa0a6;
     margin-right: 12px;
     font-size: 14px;
 }
 
-/* Input veld */
 #search-input {
     flex: 1;
     height: 100%;
     border: none;
     outline: none;
     font-size: 16px;
+    color: rgba(0,0,0,0.87);
     background: transparent;
 }
 
-/* Knoppen container */
 .search-buttons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 12px;
     margin-top: 24px;
 }
 
-/* Knoppen stijling */
 .search-btn,
 .lucky-btn {
     background-color: #f8f9fa;
     border: 1px solid #f8f9fa;
     border-radius: 4px;
     color: #3c4043;
-    font-family: Arial, sans-serif;
+    font-family: arial, sans-serif;
     font-size: 14px;
-    padding: 0 16px;
     height: 36px;
-    min-width: 120px;
+    padding: 0 16px;
     cursor: pointer;
 }
 
@@ -92,7 +109,6 @@ body {
     box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
 }
 
-/* Content container voor na de zoekopdracht */
 #content-container {
     max-width: 1200px;
     margin: 80px 0 0 100px;
@@ -108,39 +124,17 @@ section {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Nav links */
-.top-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    background-color: white;
-}
-
-.nav-left a, 
-.nav-right a {
-    color: #000;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 14px;
-}
-
-/* Content styling */
-.content-visible {
-    margin-top: 20px;
-    transform: scale(0.8);
-    transition: all 0.3s ease;
-}
-
-/* Footer styling */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 15px;
-    background-color: #f2f2f2;
-    font-size: 14px;
-    color: #70757a;
+@media (max-width: 768px) {
+    .search-wrapper {
+        width: 90%;
+    }
+    
+    .logo h1 {
+        font-size: 70px;
+    }
+    
+    #content-container {
+        margin: 60px auto;
+        width: 95%;
+    }
 }
