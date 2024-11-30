@@ -116,6 +116,12 @@ body {
     width: 80%;
 }
 
+mark {
+    background-color: pink;
+    padding: 2px;
+    border-radius: 2px;
+}
+
 section {
     margin-bottom: 40px;
     padding: 30px;
