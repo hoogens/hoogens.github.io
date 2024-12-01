@@ -24,16 +24,28 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-
-            // Toon de content container
+            
+            // Check of het de portfolio link is
+            if (this.classList.contains('logo')) {
+                contentContainer.style.display = 'none';
+                document.getElementById('search-input').value = ''; // Maakt zoekveld leeg
+                // Verwijder markeringen
+                document.querySelectorAll('mark').forEach(mark => {
+                    const text = mark.textContent;
+                    mark.replaceWith(text);
+                });
+                return;
+            }
+    
+            // Normale navigatie voor andere links
             contentContainer.style.display = 'block';
-
-                    // Verwijder alle markeringen
+            
+            // Verwijder markeringen
             document.querySelectorAll('mark').forEach(mark => {
                 const text = mark.textContent;
                 mark.replaceWith(text);
             });
-                
+            
             const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
             
