@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Maak container voor suggesties
     const suggestionsDiv = document.createElement('div');
     suggestionsDiv.className = 'suggestions-dropdown';
-    searchWrapper.parentNode.appendChild(suggestionsDiv);
+    document.querySelector('.autocomplete-container').appendChild(suggestionsDiv);
     
     // Array met secties
     const sections = [
@@ -134,6 +134,8 @@ async function fetchGithubProjects() {
 }
 
 function showSuggestions(sections, suggestionsDiv) {
+    const contentContainer = document.getElementById('content-container'); // Voeg deze regel toe
+    
     suggestionsDiv.innerHTML = sections.map(section => 
         `<div class="suggestion-item" data-section="${section.id}">
             <span>🔍</span>
@@ -145,11 +147,15 @@ function showSuggestions(sections, suggestionsDiv) {
         item.addEventListener('click', function() {
             const sectionId = this.dataset.section;
             const section = document.getElementById(sectionId);
+            
+            // Toon de content container
             contentContainer.style.display = 'block';
+            
             if (section) {
                 section.scrollIntoView({ behavior: 'smooth' });
+                suggestionsDiv.style.display = 'none';
+                searchInput.value = ''; // Maakt het zoekveld leeg na selectie
             }
-            suggestionsDiv.style.display = 'none';
         });
     });
 }
