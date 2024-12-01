@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.querySelector('.search-btn');
     const luckyButton = document.querySelector('.lucky-btn');
+    const navLinks = document.querySelectorAll('.nav-left a, .nav-right a');
+    const contentContainer = document.getElementById('content-container');
 
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
@@ -9,16 +11,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    fetchGithubProjects(); // Haalt projecten op van GitHub
+    fetchGithubProjects();
 
-    // Google Search
     searchButton.addEventListener('click', function() {
         handleSearch();
     });
 
-    // Lucky Button
     luckyButton.addEventListener('click', function() {
         feelingLucky();
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Toon de content container
+            contentContainer.style.display = 'block';
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 });
 
