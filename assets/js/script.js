@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Check of het de portfolio link is
+            // Check of het de home link is
             if (this.classList.contains('logo')) {
                 contentContainer.style.display = 'none';
                 document.getElementById('search-input').value = ''; // Maakt zoekveld leeg

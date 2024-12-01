@@ -29,6 +29,17 @@ body {
     margin: 0 15px;
 }
 
+.nav-left .logo {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+body:has(#content-container[style*="display: block"]) .nav-left .logo {
+    opacity: 1;
+    visibility: visible;
+}
+
 .search-container {
     display: flex;
     flex-direction: column;
