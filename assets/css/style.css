@@ -71,6 +71,38 @@ body:has(#content-container[style*="display: block"]) .nav-left .logo {
     padding: 0 20px;
 }
 
+.autocomplete-container {
+    position: relative;
+    width: 100%;
+}
+
+.suggestions-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #dfe1e5;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 4px 6px rgba(32, 33, 36, 0.28);
+    margin-top: -2px;
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #3c4043;
+    display: flex;
+    align-items: center;
+}
+
+.suggestion-item:hover {
+    background-color: #f8f9fa;
+}
+
 .search-bar:hover,
 .search-bar:focus-within {
     box-shadow: 0 2px 6px rgba(25, 26, 29, 0.28);

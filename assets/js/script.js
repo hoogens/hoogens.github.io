@@ -1,9 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input');
+    const searchWrapper = document.querySelector('.search-bar');
     const searchButton = document.querySelector('.search-btn');
     const luckyButton = document.querySelector('.lucky-btn');
     const navLinks = document.querySelectorAll('.nav-left a, .nav-right a');
     const contentContainer = document.getElementById('content-container');
+
+    // Maak container voor suggesties
+    const suggestionsDiv = document.createElement('div');
+    suggestionsDiv.className = 'suggestions-dropdown';
+    searchWrapper.parentNode.appendChild(suggestionsDiv);
+    
+    // Array met secties
+    const sections = [
+        { title: 'About Me', id: 'about' },
+        { title: 'Projects', id: 'projects' },
+        { title: 'Technical Skills', id: 'skills' },
+        { title: 'Contact', id: 'contact' }
+    ];
+    
 
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
@@ -19,6 +34,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     luckyButton.addEventListener('click', function() {
         feelingLucky();
+    });
+
+    // Toon suggesties bij focus
+    searchInput.addEventListener('focus', function() {
+        suggestionsDiv.style.display = 'block';
+        showSuggestions(sections, suggestionsDiv);
+    });
+    
+    // Verberg suggesties bij klik buiten zoekbalk
+    document.addEventListener('click', function(e) {
+        if (!searchWrapper.contains(e.target)) {
+            suggestionsDiv.style.display = 'none';
+        }
     });
 
     navLinks.forEach(link => {
@@ -103,6 +131,27 @@ async function fetchGithubProjects() {
     } catch (error) {
         console.error('Error loading GitHub projects', error);
     }
+}
+
+function showSuggestions(sections, suggestionsDiv) {
+    suggestionsDiv.innerHTML = sections.map(section => 
+        `<div class="suggestion-item" data-section="${section.id}">
+            <span>🔍</span>
+            <span style="margin-left: 10px">${section.title}</span>
+        </div>`
+    ).join('');
+    
+    document.querySelectorAll('.suggestion-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const sectionId = this.dataset.section;
+            const section = document.getElementById(sectionId);
+            contentContainer.style.display = 'block';
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+            suggestionsDiv.style.display = 'none';
+        });
+    });
 }
 
 function handleSearch() {
