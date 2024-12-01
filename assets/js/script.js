@@ -88,17 +88,31 @@ async function fetchGithubProjects() {
 
 function handleSearch() {
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
-    const sections = document.querySelectorAll('section');
+    const contentContainer = document.getElementById('content-container');
     let found = false;
+
+    // Maak content zichtbaar
+    contentContainer.style.display = 'block';
+
+    // Verwijder eerst alle bestaande markeringen
+    document.querySelectorAll('mark').forEach(mark => {
+        const text = mark.textContent;
+        mark.replaceWith(text);
+    });
+
+    // Als de zoekterm leeg is, stop de functie
+    if (searchTerm === '') {
+        return;
+    }
+
+    // Zoek alleen in de zichtbare tekst van secties
+    const sections = document.querySelectorAll('section p, section h2, section h3, section li');
 
     sections.forEach(section => {
         const content = section.textContent.toLowerCase();
         if (content.includes(searchTerm)) {
             found = true;
-            section.scrollIntoView({ behavior: 'smooth' });
-            // Highlight de gevonden tekst
             highlightText(section, searchTerm);
-            return;
         }
     });
 
@@ -110,11 +124,15 @@ function handleSearch() {
 // Highlight functie
 function highlightText(element, searchTerm) {
     const innerHTML = element.innerHTML;
-    const regex = new RegExp(searchTerm, 'gi');
-    element.innerHTML = innerHTML.replace(regex, match => `<mark>${match}</mark>`);
+    const regex = new RegExp(`(${searchTerm})`, 'gi');
+    element.innerHTML = innerHTML.replace(regex, '<mark>$1</mark>');
 }
 
+// Random content button
 function feelingLucky() {
+    const contentContainer = document.getElementById('content-container');
+    contentContainer.style.display = 'block';
+    
     const sections = ['about', 'projects', 'skills', 'contact'];
     const randomSection = sections[Math.floor(Math.random() * sections.length)];
     const section = document.getElementById(randomSection);
@@ -122,25 +140,3 @@ function feelingLucky() {
         section.scrollIntoView({ behavior: 'smooth' });
     }
 }
-
-// function highlightContent(searchTerm) {
-//     const sections = document.querySelectorAll('section');
-//     sections.forEach(section => {
-//         const text = section.innerHTML;
-//         const highlightedText = text.replace(
-//             new RegExp(`(${searchTerm})`, 'gi'),
-//             '<mark>$1</mark>'
-//         );
-//         section.innerHTML = highlightedText;
-//     });
-// }
-
-// function scrollToRelevantSection(searchTerm) {
-//     const sections = document.querySelectorAll('section');
-//     for (const section of sections) {
-//         if (section.textContent.toLowerCase().includes(searchTerm)) {
-//             section.scrollIntoView({ behavior: 'smooth' });
-//             break;
-//         }
-//     }
-// }
