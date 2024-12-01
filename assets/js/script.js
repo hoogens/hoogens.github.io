@@ -24,9 +24,16 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
+
             // Toon de content container
             contentContainer.style.display = 'block';
-            
+
+                    // Verwijder alle markeringen
+            document.querySelectorAll('mark').forEach(mark => {
+                const text = mark.textContent;
+                mark.replaceWith(text);
+            });
+                
             const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
             
@@ -90,6 +97,7 @@ function handleSearch() {
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
     const contentContainer = document.getElementById('content-container');
     let found = false;
+    let firstFoundSection = null;
 
     // Maak content zichtbaar
     contentContainer.style.display = 'block';
@@ -107,14 +115,24 @@ function handleSearch() {
 
     // Zoek alleen in de zichtbare tekst van secties
     const sections = document.querySelectorAll('section p, section h2, section h3, section li');
-
+    
     sections.forEach(section => {
         const content = section.textContent.toLowerCase();
         if (content.includes(searchTerm)) {
             found = true;
             highlightText(section, searchTerm);
+            
+            // Sla de eerste sectie op waar een match is gevonden
+            if (!firstFoundSection) {
+                firstFoundSection = section;
+            }
         }
     });
+
+    // Scroll naar het eerste gevonden resultaat
+    if (firstFoundSection) {
+        firstFoundSection.scrollIntoView({ behavior: 'smooth' });
+    }
 
     if (!found && searchTerm !== '') {
         alert('Geen resultaten gevonden');
