@@ -78,6 +78,18 @@ body:has(#content-container[style*="display: block"]) .nav-left .logo {
     z-index: 1600;
 }
 
+.nav-links a {
+    color: #5f6368;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+.nav-links a.active {
+    color: #1a73e8;
+    border-bottom: 3px solid #1a73e8;
+}
+
 body:has(#content-container[style*="display: block"]) .nav-links {
     display: flex;
 }
@@ -218,6 +230,20 @@ body:has(#content-container[style*="display: block"]) .search-bar {
     font-size: 14px;
 }
 
+/* Aanpassing zoekbalk iconen */
+.search-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    color: #70757a;
+}
+
+.search-icons i {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
 #search-input {
     flex: 1;
     height: 100%;
@@ -262,6 +288,7 @@ body:has(#content-container[style*="display: block"]) .search-bar {
     background: transparent;
     position: relative;
     z-index: 1000;
+    margin-top: 120px;
 }
 
 mark {
