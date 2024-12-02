@@ -11,19 +11,19 @@ body {
 }
 
 .top-nav {
-    display: none; /* Standaard verborgen op de hoofdpagina */
-    justify-content: space-between;
+    display: none;
+    justify-content: flex-start;
     align-items: center;
-    padding: 15px;
+    padding: 6px;
     font-size: 13px;
     position: fixed;
     width: 100%;
-    height: 100px;
+    height: 64px;
     top: 0;
     left: 0;
     background-color: white;
     z-index: 1500;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-bottom: none;
 }
 
 /* Toon nav bar alleen als content zichtbaar is */
@@ -53,10 +53,11 @@ body:has(#content-container[style*="display: block"]) .nav-left {
 }
 
 .nav-left .logo {
-    color: #202124;
-    font-size: 22px;
     padding-left: 27px;
-    position: relative;
+    font-size: 22px;
+    margin-right: 30px;
+    padding-right: 30px;
+    border-right: 1px solid #dfe1e5;
 }
 
 body:has(#content-container[style*="display: block"]) .nav-left .logo {
@@ -71,24 +72,30 @@ body:has(#content-container[style*="display: block"]) .nav-left .logo {
 
 .nav-links {
     position: fixed;
-    top: 75px; /* Meer ruimte onder de zoekbalk */
-    left: 170px;
+    top: 64px;
+    left: 0;
+    height: 48px;
     display: none;
-    gap: 25px; /* Meer ruimte tussen de links */
-    padding: 15px 0; /* Meer padding boven en onder */
-    z-index: 1600;
+    padding-left: 170px;
+    border-bottom: 1px solid #ebebeb;
+    align-items: center;
+    width: 100%;
+    background: white;
 }
 
 .nav-links a {
     color: #5f6368;
     text-decoration: none;
     font-size: 14px;
-    padding: 8px 0;
+    padding: 16px 12px 12px;
+    margin: 0;
+    height: auto;
 }
 
 .nav-links a.active {
     color: #1a73e8;
     border-bottom: 3px solid #1a73e8;
+    font-weight: normal;
 }
 
 body:has(#content-container[style*="display: block"]) .nav-links {
@@ -115,8 +122,8 @@ body:has(#content-container[style*="display: block"]) .search-container {
     position: fixed;
     top: 0;
     left: 170px;
+    height: 64px; /* Zelfde hoogte als top-nav */
     width: auto;
-    height: 100px; /* Zelfde hoogte als de nav bar */
     min-height: auto;
     padding: 0;
     margin: 0;
@@ -140,7 +147,7 @@ body:has(#content-container[style*="display: block"]) .search-container {
 }
 
 body:has(#content-container[style*="display: block"]) .search-wrapper {
-    width: 650px;
+    width: 690px;
     margin: 0;
 }
 
@@ -156,8 +163,8 @@ body:has(#content-container[style*="display: block"]) .search-wrapper {
 
 /* Maak de zoekbalk kleiner in de header */
 body:has(#content-container[style*="display: block"]) .search-bar {
-    height: 50px;
-    width: 1000px;
+    height: 46px;
+    width: 690px;
 }
 
 .autocomplete-container {
@@ -289,7 +296,8 @@ body:has(#content-container[style*="display: block"]) .search-bar {
     background: transparent;
     position: relative;
     z-index: 1000;
-    margin-top: 140px;
+    margin-top: 130px;
+    margin-left: 170px;
 }
 
 mark {
@@ -308,6 +316,29 @@ section {
 
 section:hover {
     box-shadow: 0 2px 8px rgba(32,33,36,0.28);
+}
+
+section h2,
+.project-card h3,
+#about p,
+.project-card p,
+.skill-category h3,
+.skill-category ul li {
+    font-size: 14px;
+    line-height: 1.58;
+    color: #202124;
+}
+
+section h2,
+.project-card h3 {
+    color: #1a0dab;
+    font-weight: normal;
+}
+
+#about p,
+.project-card p,
+.skill-category ul li {
+    color: #4d5156;
 }
 
 section h2 {
@@ -391,6 +422,44 @@ section h2 {
     font-size: 12px;
     display: flex;
     gap: 15px;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    margin-top: 60px;
+    border-top: 1px solid #dfe1e5;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #5f6368;
+    font-size: 13px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-social a {
+    color: #5f6368;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-social a:hover {
+    color: #1a73e8;
+}
+
+.footer-text {
+    color: #70757a;
+    font-size: 12px;
 }
 
 @media (max-width: 768px) {
