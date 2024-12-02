@@ -18,7 +18,7 @@ body {
     font-size: 13px;
     position: fixed;
     width: 100%;
-    height: 60px;
+    height: 100px;
     top: 0;
     left: 0;
     background-color: white;
@@ -53,14 +53,10 @@ body:has(#content-container[style*="display: block"]) .nav-left {
 }
 
 .nav-left .logo {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    font-size: 20px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    height: 100%;
+    color: #202124;
+    font-size: 22px;
+    padding-left: 27px;
+    position: relative;
 }
 
 body:has(#content-container[style*="display: block"]) .nav-left .logo {
@@ -73,14 +69,17 @@ body:has(#content-container[style*="display: block"]) .nav-left .logo {
     color: #202124;
 }
 
-/* Maak de zoekbalk kleiner in de header */
-body:has(#content-container[style*="display: block"]) .search-bar {
-    height: 45px;
+.nav-links {
+    position: fixed;
+    top: 65px;
+    left: 170px;
+    display: none;
+    gap: 20px;
+    z-index: 1600;
 }
 
-body:has(#content-container[style*="display: block"]) .search-wrapper {
-    width: 650px;
-    margin: 0;
+body:has(#content-container[style*="display: block"]) .nav-links {
+    display: flex;
 }
 
 body:has(#content-container[style*="display: block"]) .search-buttons,
@@ -96,22 +95,21 @@ body:has(#content-container[style*="display: block"]) .logo h1 {
     align-items: center;
     justify-content: center;
     min-height: 85vh;
-    transition: all 0.3s ease;
 }
 
 /* Sectie zoekbalk */
 body:has(#content-container[style*="display: block"]) .search-container {
     position: fixed;
-    padding-top: 0;
-    min-height: auto;
     top: 0;
     left: 170px;
-    height: 60px;
-    display: flex;
-    align-items: center;
     width: auto;
+    height: 100px; /* Zelfde hoogte als de nav bar */
+    min-height: auto;
+    padding: 0;
     margin: 0;
     z-index: 1600;
+    display: flex;
+    align-items: center;
 }
 
 .logo h1 {
@@ -128,6 +126,11 @@ body:has(#content-container[style*="display: block"]) .search-container {
     transition: width 0.3s ease;
 }
 
+body:has(#content-container[style*="display: block"]) .search-wrapper {
+    width: 650px;
+    margin: 0;
+}
+
 .search-bar {
     width: 100%;
     height: 60px;
@@ -136,6 +139,12 @@ body:has(#content-container[style*="display: block"]) .search-container {
     display: flex;
     align-items: center;
     padding: 0 20px;
+}
+
+/* Maak de zoekbalk kleiner in de header */
+body:has(#content-container[style*="display: block"]) .search-bar {
+    height: 50px;
+    width: 1000px;
 }
 
 .autocomplete-container {
