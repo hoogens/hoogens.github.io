@@ -71,10 +71,11 @@ body:has(#content-container[style*="display: block"]) .nav-left .logo {
 
 .nav-links {
     position: fixed;
-    top: 65px;
+    top: 75px; /* Meer ruimte onder de zoekbalk */
     left: 170px;
     display: none;
-    gap: 20px;
+    gap: 25px; /* Meer ruimte tussen de links */
+    padding: 15px 0; /* Meer padding boven en onder */
     z-index: 1600;
 }
 
@@ -82,7 +83,7 @@ body:has(#content-container[style*="display: block"]) .nav-left .logo {
     color: #5f6368;
     text-decoration: none;
     font-size: 14px;
-    padding: 5px 0;
+    padding: 8px 0;
 }
 
 .nav-links a.active {
@@ -288,7 +289,7 @@ body:has(#content-container[style*="display: block"]) .search-bar {
     background: transparent;
     position: relative;
     z-index: 1000;
-    margin-top: 120px;
+    margin-top: 140px;
 }
 
 mark {

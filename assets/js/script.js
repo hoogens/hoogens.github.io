@@ -49,6 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    document.querySelectorAll('.fas.fa-search').forEach(searchIcon => {
+        searchIcon.addEventListener('click', function() {
+            handleSearch();
+        });
+    });
+
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
